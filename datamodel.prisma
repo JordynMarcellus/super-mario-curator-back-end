@@ -1,0 +1,25 @@
+type User {
+  id: ID! @id
+  name: String! 
+  email: String! @unique
+  makerId: String
+  courses: [Course!] @relation(name:"UserCourses", link: TABLE, onDelete: CASCADE)
+  favourites: [Course!] @relation(name:"UserFavourites", link: TABLE, onDelete: CASCADE)
+  worlds: [World!] @relation(name:"UserWorlds", link: TABLE, onDelete: CASCADE)
+}
+
+type Course { 
+  courseUUID: ID! @id
+  courseId: String! 
+  isDeleted: Boolean!
+  description: String
+  createdAt: DateTime! @createdAt
+  updatedAt: DateTime! @updatedAt
+}
+
+type World {
+  worldUUID: ID! @id
+  createdAt: DateTime! @createdAt
+  updatedAt: DateTime! @updatedAt
+  courses: [Course]
+}

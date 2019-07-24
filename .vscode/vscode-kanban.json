@@ -1,0 +1,34 @@
+{
+  "done": [],
+  "in-progress": [],
+  "testing": [],
+  "todo": [
+    {
+      "assignedTo": {
+        "name": "jordynmarcellus"
+      },
+      "creation_time": "2019-07-24T15:37:23.329Z",
+      "id": "2",
+      "references": [],
+      "title": "As a user I would like to post my fave courses"
+    },
+    {
+      "assignedTo": {
+        "name": "jordynmarcellus"
+      },
+      "creation_time": "2019-07-24T15:36:41.798Z",
+      "id": "1",
+      "references": [],
+      "title": "As a user, I would like to sign in"
+    },
+    {
+      "assignedTo": {
+        "name": "jordynmarcellus"
+      },
+      "creation_time": "2019-07-24T15:38:32.817Z",
+      "id": "3",
+      "references": [],
+      "title": "As a user I would like to curate my fave courses into a world"
+    }
+  ]
+}
