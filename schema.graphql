@@ -1,13 +1,18 @@
-type Query { 
-    users(email:String): [User!]
-}`
+type Query {
+  users(email: String): [User!]
+}
 
-type Mutation { 
-    createUser(name: String!, email: String!): User
+type Mutation {
+  signUpUser(name: String!, email: String!, password: String!): User!
 }
 
 type User {
-    id: ID! 
-    email: String!
-    name: String!
+  id: ID!
+  email: String!
+  name: String!
+  password: String!
+  makerId: String
+  resetToken: String
+  restTokenExpiry: Float
+  #   permissions: [Permission!]!
 }

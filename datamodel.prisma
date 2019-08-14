@@ -1,16 +1,17 @@
 type User {
   id: ID! @id
-  name: String! 
+  name: String!
   email: String! @unique
+  password: String!
   makerId: String
-  courses: [Course!] @relation(name:"UserCourses", link: TABLE, onDelete: CASCADE)
-  favourites: [Course!] @relation(name:"UserFavourites", link: TABLE, onDelete: CASCADE)
-  worlds: [World!] @relation(name:"UserWorlds", link: TABLE, onDelete: CASCADE)
+  resetToken: String
+  restTokenExpiry: Float
+  permissions: [Permission!]! @scalarList(strategy: RELATION)
 }
 
-type Course { 
+type Course {
   courseUUID: ID! @id
-  courseId: String! 
+  courseId: String!
   isDeleted: Boolean!
   description: String
   createdAt: DateTime! @createdAt
@@ -22,4 +23,13 @@ type World {
   createdAt: DateTime! @createdAt
   updatedAt: DateTime! @updatedAt
   courses: [Course]
+}
+
+enum Permission {
+  ADMIN
+  USER
+  ITEM_CREATE
+  ITEM_UPDATE
+  ITEM_DELETE
+  PERMISSION_UPDATE
 }
